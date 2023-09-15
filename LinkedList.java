@@ -11,7 +11,7 @@ public class LinkedList {
         }
     }
 
-    public void addFirst(String data){
+    public void prepend(String data){
         Node newNode = new Node(data);
         if (head == null){
             head = newNode;
@@ -22,7 +22,7 @@ public class LinkedList {
         head = newNode;
     }
 
-    public void addLast(String data){
+    public void append(String data){
         Node newNode = new Node(data);
         if (head == null){
             head = newNode;
@@ -33,7 +33,7 @@ public class LinkedList {
         while (currNode.next != null){
             currNode = currNode.next;
         }
-            currNode = newNode;
+            currNode.next = newNode;
     }
 
     public void printList(){
@@ -53,11 +53,14 @@ public class LinkedList {
 
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
-        list.addFirst("a");
-        list.addFirst("is");
+        list.prepend("am");
+        list.prepend("i");
 
 
         // Print the LinkedList
+        list.printList();
+
+        list.append("Sharad");
         list.printList();
     }
 }
